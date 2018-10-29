@@ -1,7 +1,8 @@
 var https = require("https");
 
-function getAndPrintHTML() {
-  https.get(requestOptions, function(response) {
+function getAndPrintHTML(options) {
+    var options = requestOptions;
+  https.get(options, function(response) {
     var body = "";
     response.on("data", chunk => {
       body += chunk;
