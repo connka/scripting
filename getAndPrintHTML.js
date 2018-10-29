@@ -1,18 +1,19 @@
-var https = require("https");
+var https = require("https");                             
 
-https.get("https://sytantris.github.io/http-examples/step2.html", function(response) {
-if(response.statusCode !== 200) {
-  console.log('Error status code ' + response.statusCode);
-  return;
-}
+var requestOptions = {
+  host: 'sytantris.github.io',
+  path: '/http-examples/step2.html'
+};
 
-var body = '';
-response.on('data', (chunk) => {
-  body += chunk;
-});
+https.get(requestOptions, function (response) {
+    var body = '';
+    response.on('data', (chunk) => {
+      body += chunk;
+    });
+    
+    response.on('end', () => {
+      console.log(body);
+      
+    });
 
-response.on('end', () => {
-  console.log(body);
-  
-});
 });
