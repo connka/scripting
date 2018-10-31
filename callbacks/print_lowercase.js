@@ -1,4 +1,3 @@
-
 funcHandle = require("./help-functions");
 
 var requestOptions = {
@@ -6,7 +5,7 @@ var requestOptions = {
   path: '/http-examples/step6/lowercase.html'
 };
 
-function printLowerCase (html) {
+function printLowerCase(html) {
   console.log(html.toString().toLowerCase());
 };
 
